@@ -5,7 +5,7 @@ import {FaceSnapModel} from "../models/face-snap.model";
   providedIn: 'root'
 })
 
-export class FaceSnapService {
+export class PostSnapService {
   faceSnaps:FaceSnapModel[] = [
     {
       id: 1,
@@ -36,20 +36,20 @@ export class FaceSnapService {
     }];
 
 
-  getAllFaceSnaps(): FaceSnapModel[] {
+  getAllPosts(): FaceSnapModel[] {
     return this.faceSnaps;
   }
-  getFaceSnapById( faceSnapId: number): FaceSnapModel {
-    const faceSnap = this.faceSnaps.find(faceSnap=>faceSnap.id === faceSnapId);
-    if (!faceSnap){
+  getPostById(postId: number): FaceSnapModel {
+    const post = this.faceSnaps.find(postSnap=>postSnap.id === postId);
+    if (!post){
       throw new Error("snap not found!")
     }else{
-      return faceSnap;
+      return post;
     }
   }
 
-  faceSnapPost(faceSnapId: number, snapType: 'like' | 'dislike'): void {
-    const post = this.getFaceSnapById(faceSnapId);
-    snapType === 'like' ? post.snaps++ : post.snaps--;
+  snapPost(postId: number, clickType: 'like' | 'dislike'): void {
+    const post = this.getPostById(postId);
+    clickType === 'like' ? post.snaps++ : post.snaps--;
   }
 }

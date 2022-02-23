@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData} from "@angular/common";
 
 import { AppComponent } from './app.component';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
 import {MatIconModule} from "@angular/material/icon";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as fr from '@angular/common/locales/fr';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { HeaderComponent } from './header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import {PostSnapComponent} from "./post-snap/post-snap.component";
+import {PostSnapListComponent} from "./post-snap-list/post-snap-list.component";
+import {SinglePostSnapComponent} from "./single-post-snap/single-post-snap.component";
 
 
 
@@ -19,11 +19,11 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
 @NgModule({
   declarations: [
     AppComponent,
-    FaceSnapComponent,
-    FaceSnapListComponent,
+    PostSnapComponent,
+    PostSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    SingleFaceSnapComponent
+    SinglePostSnapComponent
   ],
   imports: [
     BrowserModule,
