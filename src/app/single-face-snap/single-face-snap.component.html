@@ -1,0 +1,13 @@
+<div class="face-snap-card">
+  <h2> {{faceSnapModel.title | titlecase }}</h2>
+  <img [src]="faceSnapModel.imageUrl" [alt]="faceSnapModel.title">
+  <p> {{ faceSnapModel.description}}</p>
+  <p *ngIf="faceSnapModel.location"> Photo prise à {{faceSnapModel.location}}</p>
+  <p> <i>Publié {{faceSnapModel.createdDate | date:'le d MMMM yyyy, à HH:mm'}}</i></p>
+  <p>
+    <span><mat-icon class="like" [ngClass]="{dislike:  onLike === true }" (click)="likeDislike()" >thumb_up_alt</mat-icon></span>
+    <span class="snaps" [ngStyle]="{color: 'rgb(0, 0,' + faceSnapModel.snaps + ')'}">{{faceSnapModel.snaps}}</span>
+    <!--    <span><mat-icon>send</mat-icon></span>-->
+    <button routerLink="/facesnaps">Back</button>
+  </p>
+</div>
